@@ -52,12 +52,15 @@ def move(path):
         msg.linear.x = 0.5 * sqrt(trans_setpoint.point.x ** 2 + trans_setpoint.point.y ** 2)
         if msg.angular.z > max_angular_velocity:
             msg.angular.z = max_angular_velocity
-        elif msg.angular.z < -max_angular_velocity:
-            msg.angular.z = -max_angular_velocity
-        if msg.linear.x > max_linear_velocity:
+            msg.linear.x = 0
+        # elif msg.angular.z < -max_angular_velocity:
+        #     msg.angular.z = -max_angular_velocity
+        elif msg.angular.z > 0.8 * max_angular_velocity:
+            msg.linear.x = 0
+        elif msg.linear.x > max_linear_velocity:
             msg.linear.x = max_linear_velocity
-        elif msg.linear.x < -max_linear_velocity:
-            msg.linear.x = -max_linear_velocity
+        # elif msg.linear.x < -max_linear_velocity:
+        #     msg.linear.x = -max_linear_velocity
 
         # Publish Twist
         pub.publish(msg)
@@ -73,21 +76,20 @@ def move(path):
     pub.publish(msg)
 
     # Get new path from action server
-
+    get_path()
 
 
 def get_path():
     global goal_client
 
-    while True:
-        # Get path from action server
-        goal_client.wait_for_server()
-        goal_client.send_goal(None)
-        goal_client.wait_for_result()
-        if goal_client.get_result().path is None:
-            exit() # Done
-        # Call move with path from action server
-        move(goal_client.get_result().path)
+    # Get path from action server
+    goal_client.wait_for_server()
+    goal_client.send_goal(None)
+    goal_client.wait_for_result()
+    if goal_client.get_result().path is None:
+        exit() # Done
+    # Call move with path from action server
+    move(goal_client.get_result().path)
 
 
 if __name__ == "__main__":
