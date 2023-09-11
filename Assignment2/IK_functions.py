@@ -1,3 +1,10 @@
+#! /usr/bin/env python3
+
+"""
+    # {Xiaojing Tan}
+    # {xta@kth.se}
+"""
+
 import numpy as np
 pi = np.pi
 sin = np.sin
