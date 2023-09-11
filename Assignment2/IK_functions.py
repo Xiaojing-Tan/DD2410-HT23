@@ -9,6 +9,7 @@ import numpy as np
 pi = np.pi
 sin = np.sin
 cos = np.cos
+asin = np.arcsin
 acos = np.arccos
 atan = np.arctan
 atan2 = np.arctan2
@@ -26,11 +27,10 @@ def scara_IK(point):
     l1 = 0.3
     l2 = 0.35
     x = x - l0
-    l = np.sqrt(x*x+y*y)
-
+    
     q[2] = z
-    q[1] = acos(-(l1**2+l2**2-x**2-y**2)/2/l1/l2)
-    q[0] = atan(y/x) - acos((l1*l1+x*x+y*y-l2*l2)/2/l1/l)
+    q[1] = acos((x**2+y**2-l1**2-l2**2)/2/l1/l2)
+    q[0] = atan2(y,x) - acos((l1**2+x**2+y**2-l2**2)/2/l1/np.sqrt(x*x+y*y)) # atan2 can deal with all angles in four quadrants and x = 0 cases
     
     return q
 
