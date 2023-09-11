@@ -5,12 +5,12 @@
     # {xta@kth.se}
 """
 import numpy as np
-from scipy.spatial.transform import Rotation
 pi = np.pi
-cos = np.cos
 sin = np.sin
+cos = np.cos
 acos = np.arccos
 atan = np.arctan
+atan2 = np.arctan2
 tolerance = 1e-3
 
 def scara_IK(point):
@@ -43,69 +43,59 @@ def kuka_IK(point, R, joint_positions):
     """
     Fill in your IK solution here and return the seven joint values in q
     """
-    # X = np.array([x, y, z])
-    # R = np.array(R)
+    # Convert into column vectors
+    P = np.array([[x], [y], [z]])
+    R = np.array(R)
+    q = np.array(q).reshape(-1,1)
 
-    # # DH table
-    # L = 0.4
-    # M = 0.39
-    # alpha = np.array([pi/2, -pi/2, -pi/2, pi/2, pi/2, -pi/2, 0])
-    # d = np.array([0, 0, L, 0, M, 0, 0])
-    # # a = np.zeros(7)
+    # DH table
+    L = 0.4
+    M = 0.39
+    alpha = np.array([pi/2, -pi/2, -pi/2, pi/2, pi/2, -pi/2, 0])
+    d = np.array([0.311, 0, L, 0, M, 0, 0.078])
+    # a = np.zeros(7)
 
-    # while True:
-    #     # Get transform matrix
-    #     T = np.eye(4)
-    #     z = [np.array([0,0,1])]
-    #     p = [np.array([0,0,0])]
-    #     for i in range(7):
-    #         T_temp = np.array([[cos(q[i]),  -sin(q[i])*cos(alpha[i]),   sin(q[i])*sin(alpha[i]),    0   ],
-    #                         [sin(q[i]),  cos(q[i])*cos(alpha[i]),    -cos(q[i])*sin(alpha[i]),   0   ],
-    #                         [0,          sin(alpha[i]),              cos(alpha[i]),              d[i]],
-    #                         [0,          0,                          0,                          1   ]])
-    #         T = np.dot(T,T_temp)
-    #         z_temp = T[0:3,2]
-    #         z.append(z_temp)
-    #         p_temp = T[0:3,3]
-    #         p.append(p_temp)
+    while True:
+        # Get transform matrix
+        T = np.eye(4)
+        z = np.array([[0],[0],[1]])
+        p = np.array([[0],[0],[0]])
+        for i in range(7):
+            T_temp = np.array([[cos(q[i,0]),    -sin(q[i,0])*cos(alpha[i]), sin(q[i,0])*sin(alpha[i]),  0   ],
+                            [sin(q[i,0]),       cos(q[i,0])*cos(alpha[i]),  -cos(q[i,0])*sin(alpha[i]), 0   ],
+                            [0,                 sin(alpha[i]),              cos(alpha[i]),              d[i]],
+                            [0,                 0,                          0,                          1   ]])
+            T = T @ T_temp
+            z_temp = T[0:3,2].reshape(-1,1)
+            z = np.column_stack((z,z_temp))
+            p_temp = T[0:3,3].reshape(-1,1)
+            p = np.column_stack((p,p_temp))
 
-    #     # Get Jacobian matrix
-    #     J = np.array([])
-    #     for i in range(7):
-    #         JP = np.cross(z[i],p[7]-p[i])
-    #         JO = z[i]
-    #         J = np.concatenate((J, JP))
-    #         J = np.concatenate((J, JO))
-    #     J = J.reshape(7,6).T
-        
-    #     # Calculate position error
-    #     X_hat = T[0:3, 3]
-    #     print("X_hat: ", X_hat)
-    #     print("X: ", X)
-    #     error_X = X_hat - X
+        # Get Jacobian matrix
+        J = np.empty((6,0))
+        for i in range(7):
+            JP = np.cross(z[:,i],p[:,7]-p[:,i])
+            JO = z[:,i]
+            J = np.column_stack((J, np.concatenate((JP, JO)).reshape(-1,1)))
 
-    #     # Calculate pose error
-    #     R_hat = T[0:3,0:3]
-    #     error_R = np.dot(R.T, R_hat)
-    #     error_Euler = np.array([np.arctan2(error_R[2, 1], error_R[2, 2]),  # Roll
-    #                           np.arctan2(-error_R[2, 0], np.sqrt(error_R[2, 1] ** 2 + error_R[2, 2] ** 2)),  # Pitch
-    #                           np.arctan2(error_R[1, 0], error_R[0, 0])]) # Yaw
-        
-    #     # quat_R = Rotation.from_matrix(R).as_quat()
-    #     # quat_R_hat = Rotation.from_matrix(R_hat).as_quat()
-    #     # diff_quat = np.quaternion(quat_R_hat) * np.quaternion(quat_R).conj()
-    #     # diff_rotation = R.from_quat([diff_quat.x, diff_quat.y, diff_quat.z, diff_quat.w])
-    #     # error_R = diff_rotation.as_euler('zyx')
+        # Calculate position and pose error
+        P_hat = T[0:3,3].reshape(-1,1)
+        error_P = P_hat - P
+        R_hat = T[0:3,0:3]
+        error_Euler1 = 0.5*(np.cross(R_hat[:,0],R[:,0])+np.cross(R_hat[:,1],R[:,1])+np.cross(R_hat[:,2],R[:,2])).reshape(-1,1)
+        error_R = R.T @ R_hat
+        error_Euler2 = np.array([atan2(error_R[2, 1], error_R[2, 2]),  # Roll
+                                atan2(-error_R[2, 0], np.sqrt(error_R[2, 1] ** 2 + error_R[2, 2] ** 2)),  # Pitch
+                                atan2(error_R[1, 0], error_R[0, 0])]).reshape(-1,1) # Yaw
+        error_Euler3 = error_R - np.eye(3)
+        error_Euler3 = (error_Euler3[:,0]+error_Euler3[:,1]+error_Euler3[:,2]).reshape(-1,1)
+        error_X = np.vstack((error_P, error_Euler1))
+        # print("Maximum error: ",max(abs(error_X)))
 
-    #     print("error_X: ", error_X)
-    #     print("error_Euler: ", error_Euler)
-    #     error_X = np.concatenate((error_X,error_Euler))
-    #     print("Maximum error: ",max(abs(error_X)))
-    #     if max(abs(error_X)) < tolerance:
-    #         break
+        # Calculate joint error
+        error_q = np.dot(np.linalg.pinv(J),error_X)
+        q = q - error_q
 
-    #     # Calculate q error
-    #     error_q = np.dot(np.linalg.pinv(J),error_X)
-    #     q = q - error_q
-
-    # return q
+        if max(abs(error_X)) < tolerance:
+            break
+    return q
