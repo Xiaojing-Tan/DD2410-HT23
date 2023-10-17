@@ -87,9 +87,7 @@ Once you have implemented an IK solution, you can test it by relaunching the *<f
 
 The robot should move down and up along the path, keeping a constant orientation, similarly to this:
 
-[![Alt text](https://i.ytimg.com/vi/A-MGo2cvHNs/maxresdefault.jpg)](https://youtu.be/watch?v=A-MGo2cvHNs)
-
-<div style="width:100%;height:0;padding-bottom:63%;position:relative;"><iframe src="https://giphy.com/embed/AjiHzozKOjZAWGevnX" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/AjiHzozKOjZAWGevnX">via GIPHY</a></p>
+![Alt text](https://i.giphy.com/media/6Ydt0evLZYU2MtNwX7/giphy.webp)
 
 ### FAQ:
 
