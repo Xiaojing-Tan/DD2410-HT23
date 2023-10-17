@@ -5,7 +5,7 @@ After ensuring that you have a working version of Python 3, you can obtain the s
 
 ## Useful resources
  - [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics#path-planning) for planning algorithms,
- - [demo.ipynb](demo.ipynb) for this assignment's introduction.
+ - [demo.ipynb](demo.ipynb) or demo.pdf in the repository linked above for this assignment's introduction. These files correspond exactly to the Zoom presentation that was given.
 
 
 ## Description
@@ -23,6 +23,8 @@ The state variables are:
  - `theta`: heading angle (direction of travel)
 
 And, the sole control variable is the steering angle `phi ∈ [-pi/4, pi/4]` (with respect to the direction of travel).
+
+Note: we refer to the state as `(x, y, theta)` and the position as `(x, y)`.
 
 **Tip**: you can simplify the planning problem by lowering the number of control choices though discretisation, e.g. `phi ∈ {-pi/4, 0, pi/4}`.
 
@@ -158,4 +160,9 @@ and returns a tuple of the form `(xn, yn, thetan)`, containing:
  - `yn : float`: new y-position
  - `thetan : float`: new heading angle
 
-After computing the new state `xn, yn, thetan = step(car, x, y, theta, phi)`, check `car.obs` to see if the new state is within any obstacles, `(car.xlb, car.xub, car.ylb, car.yub)` to see if it is out of bounds, and `(car.xt, car.yt)` to see if it is close the the target state.
+After computing the new state `xn, yn, thetan = step(car, x, y, theta, phi)`, check `car.obs` to see if the new state is within any obstacles, `(car.xlb, car.xub, car.ylb, car.yub)` to see if it is out of bounds, and `(car.xt, car.yt)` to see if it is close the the target state. The evaluation of your solution will stop when the position `(x, y)` intersects and obstacle, is out of bounds, or is within 1.5 meters of the target (at which point you will have succeeded).
+
+**Note**:
+ - Your solution is evaluated on whether your final position is close to the target position.
+ - The final heading angle is free.
+ - 
