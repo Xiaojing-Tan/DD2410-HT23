@@ -1,6 +1,6 @@
 # Mapping
 
-## [PDF from the presentation](https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment4/IROB23%20-%20Assignment%204_%20Mapping.pdf)
+## [PDF from the presentation](https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment4/IROB23%20-%20Assignment%204_%20Mapping.pdf){:target="_blank"}
 
 ## Fourth assignment: Mapping
 Mapping is one of the core competencies of truly autonomous robots. Autonomous robots can use maps in a number of different ways, search and rescue robots can use them to make sure they search through the whole building instead of moving in between the same rooms over and over, autonomous cars use them in order to find a path that leads to the desired location, multicopters can use the maps to localize themself in order to stay in the air.
