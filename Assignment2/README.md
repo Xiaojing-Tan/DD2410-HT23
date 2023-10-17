@@ -89,6 +89,8 @@ The robot should move down and up along the path, keeping a constant orientation
 
 [![Alt text](https://i.ytimg.com/vi/A-MGo2cvHNs/maxresdefault.jpg)](https://youtu.be/watch?v=A-MGo2cvHNs)
 
+<div style="width:100%;height:0;padding-bottom:63%;position:relative;"><iframe src="https://giphy.com/embed/AjiHzozKOjZAWGevnX" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/AjiHzozKOjZAWGevnX">via GIPHY</a></p>
+
 ### FAQ:
 
 1. One of the most common questions we get for this assignment is regarding the threshold for the KUKA part. Students often find that if they set the tolerance threshold for when to break the loop in the numerical IK too small, they get a time out, and when they set it too high, the error is too large. For all cases we have examined, this has never been caused by the range of acceptable values for the threshold being small. In all cases it has been caused by the implementation of the algorithm being incorrect, so that it doesn't converge. Thus, with a small threshold, the loop never exits, and with a large threshold, the loop never starts, as the initial error is already smaller than the threshold.
