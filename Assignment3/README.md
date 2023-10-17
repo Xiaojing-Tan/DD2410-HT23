@@ -1,5 +1,8 @@
 # Dubin's Car
 
+## Installation
+After ensuring that you have a working version of Python 3, you can obtain the source code by  downloading the repository from: [assignemnt3_planning2023.zip](https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment3/assignemnt3_planning2023.zip)
+
 ## Useful resources
  - [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics#path-planning) for planning algorithms,
  - [demo.ipynb](demo.ipynb) for this assignment's introduction.
