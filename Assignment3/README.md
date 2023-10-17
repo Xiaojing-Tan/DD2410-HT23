@@ -165,4 +165,3 @@ After computing the new state `xn, yn, thetan = step(car, x, y, theta, phi)`, ch
 **Note**:
  - Your solution is evaluated on whether your final position is close to the target position.
  - The final heading angle is free.
- - 
