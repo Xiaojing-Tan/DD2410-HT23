@@ -114,10 +114,9 @@ Evaluation:
 ## Install
 The following instructions are for the PCs in the lab rooms, which have already been set up for you.
 
-Download the project code [here](https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment5/assignment_5.zip) directly.
+Download the project code [here](https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment5/assignment_5.zip) directly (or run: `x-www-browser https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment5/assignment_5.zip`).
 
-Or run: ```x-www-browser https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment5/assignment_5.zip```
-Then: 
+Then run:
 ```
 # Unpack it in ~/catkin_ws/src/
 # (or using the file browser)
