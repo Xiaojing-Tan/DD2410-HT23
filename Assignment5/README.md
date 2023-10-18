@@ -130,9 +130,13 @@ source ~/.bashrc
 cd ~/catkin_ws
 ```
 
-```catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3```
+```
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+```
 
-```source devel/setup.bash```
+```
+source devel/setup.bash
+```
 
 To run the project in personal computers, your own missing system dependencies have to be met. A hint on how to solve this can be found in this [README](https://github.com/ignaciotb/robi_final_project/blob/master/README.md) but the setups will vary for each of your installations and we will not offer support for this (Google is your friend here). As an extra advice, stay away from virtual machines and make sure your laptop can handle this workload.
 
