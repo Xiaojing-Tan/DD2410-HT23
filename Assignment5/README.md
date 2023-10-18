@@ -6,6 +6,9 @@ This assignment is carried out in pairs, and presented orally to the TA's. You m
 Completing this assignment to an E level by Oct. 13, 17:00 will give you 3 bonus points towards the score of the final exam. Completing it to the C level by the same deadline will give you 5 bonus points, and the A level will give you 7 points.
 
 ## Presentation slides
+
+
+
 ## Introduction
 
 The final project consists of a simulation in [Gazebo](http://gazebosim.org/) of a [TIAGo robot](http://tiago.pal-robotics.com/) in an apartment. The robot is equipped with several onboard sensors and a manipulator arm which enable it to autonomously navigate and interact with the environment through simple manipulation tasks. The goal of this project is to implement a mission planner for TIAGo to execute three different missions. **Note that you need to upload your solution here in Canvas before presenting, details below.**
@@ -80,6 +83,7 @@ Evaluation:
 Pick&Carry&Place with visual sensing and [navigation](http://wiki.ros.org/navigation?distro=kinetic):  in this third level, the robot [starts in an unknown pose](https://en.wikipedia.org/wiki/Kidnapped_robot_problem) and must make use of its sensors and a prior map of the room to transport the cube safely among rooms.
 
 
+
 Implement a behavior tree that goes through the following main states:
 
 1. Robot has localized itself in the apartment
@@ -107,7 +111,7 @@ Evaluation:
 The following instructions are for the PCs in the lab rooms, which have already been set up for you.
 ```
 # Download the project code:
-# From files, download [assignment_5.zip]()
+# From files, download [assignment_5.zip](assignment_5.zip)
 
 # Unpack it in ~/catkin_ws/src/
 # (or using the file browser)
@@ -122,64 +126,48 @@ source ~/.bashrc
 cd ~/catkin_ws
 ```
 
+```catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3```
 
+```source devel/setup.bash```
 
+To run the project in personal computers, your own missing system dependencies have to be met. A hint on how to solve this can be found in this [README](https://github.com/ignaciotb/robi_final_project/blob/master/README.md) but the setups will vary for each of your installations and we will not offer support for this (Google is your friend here). As an extra advice, stay away from virtual machines and make sure your laptop can handle this workload.
 
+## Launch the simulation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Packages for the Assignment 5 of the course DD2410 "Introduction to Robotics".
-
-## Install
-You need g++ with c++11 to compile this repo.
-Tested on Ubuntu 18.04 and ROS Melodic.
-Clone this repository inside your catkin workspace, install the dependencies, build it and run it.
-For these instructions, we'll assumed you have created a ws called catkin_ws. 
-Run the following commands in a terminal:
+To run the project, execute the following commands in two terminals:
 ```
-$ cd ~/catkin_ws/src
-$ git clone "this_repo_link" "folder_name"
-$ cd 
-$ rosdep update
-$ rosdep install --from-paths catkin_ws --ignore-src --rosdistro=$ROS_DISTRO -y
-$ cd ~/catkin_ws
-$ catkin_make -DCATKIN_ENABLE_TESTING=0 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+# Launch Gazebo and RViZ
+roslaunch robotics_project gazebo_project.launch
 
-Add this line at the end of your .bashrc file:
-export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/
-
-$ source .bashrc
-$ source catkin_ws/devel/setup.bash
+# Deploy the system and start the simulation
+roslaunch robotics_project launch_project.launch
 ```
-## Run
-In order to run the system:
-```
-$ roslaunch robotics_project gazebo_project.launch
-$ roslaunch robotics_project launch_project.launch
-```
-You should be able to visualize the system in both Rviz and Gazebo and then you're ready to start to work.
-See the instructions for the project in Canvas.
+Wait for Gazebo and RViZ to show up before running the second command.
 
-## License
+While developing and testing, you can stop (Ctrl+C) the launch_project.launch script and relaunch it without having to relaunch the gazebo part. This will make things faster and reduce the risk of issues related to relaunching the Gazebo scenario several times. If you do not want to run the Gazebo graphical interface (client) in order to reduce the workload of your PC, you can set the "gzclient" variable in the launch file to false.
 
-This project is licensed under the Modified BSD License - see [LICENSE](https://opensource.org/licenses/BSD-3-Clause) for details
+If everything works out, you should see the robot moving around the apartment, folding its arm, approaching a chair and lowering its head. This dummy example (also available as a BT) shows you how to call services and actions and interact with topics from your mission planner. They are good skeletons to start to develop your own solutions.
 
-## Acknowledgments
+## Errors out of the scope of your solution
 
-* Based on packages from [PAL Robotics](http://www.pal-robotics.com/en/home/)
+You might experience that the simulation fails sometimes despite the fact that all components are correctly implemented (much like in a real system). [MoveIt!](https://moveit.ros.org/) may fail to compute a trajectory for the robot arm while picking/placing (i.e Pick result: PLANNING_FAILED) or the [Navigation stack](https://moveit.ros.org/) might get the robot stuck in a spinning loop while trying to reach a waypoint due to very small inaccuracies on the base localization.
+
+Handling these errors is not requested beyond logging them and showing them on terminal from your mission planner. If they occur during the demo, you will be given another try to run the full simulation, so do not despair!
+
+A full, successful round of the level A solution might take a while and during the testing it can be frustrating to see the robot fail for the reasons above. A couple of hints in order to save time **during the development** of your solutions:
+
+Hint 1: Sometimes the robot might collide with the leg of the picking table while navigating towards the second table. It's ok to pause the simulation and manually give a little push to the robot away from the table if it gets stuck (but put the table back after).
+
+Hint 2: Equivalently, if the robot cannot reach the pick waypoint and instead starts to spin in front of the table (as explained above), manually place it a bit further and let it recompute the path and try again.
+
+Hint 3: If you don't want to wait for the robot to slowly navigate from table A to table B after picking the cube, kidnap it yourself and place it next to the waypoint!
+
+In general, you're allowed to modify and play with the full simulation scenario you've been given in order to make your life easier during your development. Everything is accepted **as far as your solution works as expected during the examination in the original scenario**.
+
+## Submit your files
+
+For this assignment, **you have to upload your solution files here in Canvas BEFORE YOU PRESENT YOUR SOLUTION**. You should upload your files "sm_students.py", "bt_students.py" and "launch_project.launch", as required for the different grades. Use the "Submit Assignment" button at the top right of this page.
+
+## Work in pairs
+
+In this assignment, you will have to work in pairs. Try to pair up with another student with the same level of ambition. You can use the "Discussions" forum to look for partners. You must have a compelling reason to work on your own. Let us know as soon as possible.
