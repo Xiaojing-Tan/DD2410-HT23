@@ -34,7 +34,8 @@ At the beginning, this function always returns zero values for the joints, so th
 
 The robot's joints will start moving according to the solution you provide, and you should see something like this:
 
-https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/77e1b161-4434-459f-941c-ddd8c35bd382  
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/77e1b161-4434-459f-941c-ddd8c35bd382
+
 (Source: https://www.youtube.com/watch?v=rsxZDhXIY-Q&t=1s)
 
 Since there is more than one possible solution for this IK problem, the motion of your robot could look different. The important aspect is that the end-effector is following the desired path.
