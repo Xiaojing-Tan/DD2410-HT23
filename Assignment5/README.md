@@ -134,7 +134,7 @@ catkin_make -DCATKIN_ENABLE_TESTING=0 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 ```
 ```
 # Add this line at the end of your .bashrc file and source it:
-export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/
+echo 'export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/' >> ~/.bashrc
 source ~/.bashrc
 
 # Build the project:
