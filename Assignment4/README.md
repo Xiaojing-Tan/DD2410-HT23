@@ -122,10 +122,10 @@ What you have to do:
 Below in the table you will find an image for each of the four maps. This is how your corresponding map should look if you have done the assignment correctly. You can find images of all correct maps in the folder *mapping_assignment_metapackage/mapping_assignment/correct_maps/*.
 |**Map**    |**Image**|
 |---        |---|
-|stage_1    |![Alt text](map/stage_1.png)|
-|stage_2    |![Alt text](map/stage_2.png)|
-|stage_3    |![Alt text](map/stage_3.png)|
-|stage_4    |![Alt text](map/stage_4.png)|
+|stage_1    |![Alt text](images/stage_1.png)|
+|stage_2    |![Alt text](images/stage_2.png)|
+|stage_3    |![Alt text](images/stage_3.png)|
+|stage_4    |![Alt text](images/stage_4.png)|
 
 The yellow part of the images is occupied space, while the gray part is unknown space.
 
@@ -153,10 +153,10 @@ What you have to do:
 
 |**Map**    |**Image**|                     **Image inflated**|
 |---        |---      |---|
-|stage_1    |![Alt text](map/C_stage_1.png)|![Alt text](map/C_stage_1_inflated.png)|
-|stage_2    |![Alt text](map/C_stage_2.png)|![Alt text](map/C_stage_2_inflated.png)|
-|stage_3    |![Alt text](map/C_stage_3.png)|![Alt text](map/C_stage_3_inflated.png)|
-|stage_4    |![Alt text](map/C_stage_4.png)|![Alt text](map/C_stage_4_inflated.png)|
+|stage_1    |![Alt text](images/C_stage_1.png)|![Alt text](images/C_stage_1_inflated.png)|
+|stage_2    |![Alt text](images/C_stage_2.png)|![Alt text](images/C_stage_2_inflated.png)|
+|stage_3    |![Alt text](images/C_stage_3.png)|![Alt text](images/C_stage_3_inflated.png)|
+|stage_4    |![Alt text](images/C_stage_4.png)|![Alt text](images/C_stage_4_inflated.png)|
 
 The yellow part of the images is occupied space, the white free space, gray unknown space, and red C-space.
 

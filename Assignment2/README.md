@@ -7,7 +7,7 @@ It is composed of two parts:
 1. A 3 DOF SCARA robot, with an inverse kinematic solution that is possible in analytic form. Solving this part is the minimum requirement to pass the assignment, and get an E grade. Kattis will give you a score of 20 or above if this part is solved.
 2. A 7 DOF KUKA robot, with the inverse kinematic solution to be implemented with iterative algorithms. Solving this part is required for a C grade (the best grade possible for this assignment). Kattis will give you a score of 22 if both parts are solved.
 
-Download the file *<font color=red>Assignment_2_kinematics.zip</font>* from [here](https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment2/2023_Assignment_2_kinematics.zip) and decompress it. Put the ROS package in your ROS workspace and run <font color=red>`catkin_make`</font>. Remember to source the `devel/setup.bash` file if needed.
+Download the file *<font color=red>Assignment_2_kinematics.zip</font>* from [here](https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment2/2023_Assignment_2_kinematics.zip) and decompress it. Put the ROS package in your ROS workspace and run <font color=red>`catkin_make`</font>. Remember to source the `devel/setup.bash` file if needed.
 
 The python file: *<font color=red>kinematics_assignment_metapackage/kinematics_assignment/scripts/IK_functions.py</font>* is the file you have to modify and submit to pass the assignment. This file contains two functions, one per robot.
 
