@@ -90,7 +90,7 @@ Once you have implemented an IK solution, you can test it by relaunching the *<f
 
 The robot should move down and up along the path, keeping a constant orientation, similarly to this:
 
-https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/a9055755-6158-4241-93d3-e1f3efc5fc1b
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/a9055755-6158-4241-93d3-e1f3efc5fc1b  
 (Source: https://www.youtube.com/watch?v=A-MGo2cvHNs)
 
 ### FAQ:
