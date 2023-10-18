@@ -86,7 +86,10 @@ Where:
 
 This starts the rosbag which contains the robot's position and the sensor readings from the robot.
 
-Terminal 4: `rosrun mapping_assignment main.py`  
+Terminal 4:
+```
+rosrun mapping_assignment main.py
+````  
 This runs your code.
 
 **NOTE:** If you restart the rosbag you should also restart this, since the map is never deleted otherwise between different runs.
