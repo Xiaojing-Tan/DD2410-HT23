@@ -42,13 +42,7 @@ Along with the demos, you will be questioned about basic concepts of the solutio
 
 In this scenario, TIAGo is expected to pick an Aruco cube from a known pose on top of table 1, navigate towards table 2 behind it and place the object there. The cameras and laser scan cannot be used for this level.
 
-<video width="465" height="261" preload="metadata" src="https://eu.nv.instructuremedia.com/fetch/QkFoYkIxc0hhUU54d0Fvd2JDc0hnWFV3WlE9PS0tNzMxYjdlNDA3MzBmMTI4NjM1MGI2NzNkODU5YWYwNDI5N2IzMmEzZA.mp4" style="width: 100%; height: 100%;"><source type="video/mp4" src="https://eu.nv.instructuremedia.com/fetch/QkFoYkIxc0hhUU54d0Fvd2JDc0hnWFV3WlE9PS0tNzMxYjdlNDA3MzBmMTI4NjM1MGI2NzNkODU5YWYwNDI5N2IzMmEzZA.mp4" title="640x360 160 kbps"><source type="video/mp4" src="https://eu.nv.instructuremedia.com/fetch/QkFoYkIxc0hhUU55d0Fvd2JDc0hnWFV3WlE9PS0tMGY2MzQ5MTI0ZTNhMzEyOTdjZmMyYThkN2M2MzIzN2E3ZjVlYzE4MA.mp4" title="854x480 182 kbps"><source type="video/mp4" src="https://eu.nv.instructuremedia.com/fetch/QkFoYkIxc0hhUU56d0Fvd2JDc0hnWFV3WlE9PS0tNWE1ODE0OTM2NmIwODFiZThjOTk2MmU2ZmNhYjZmNDgyMDIzYWFhYQ.mp4" title="1280x720 284 kbps"><source type="video/mp4" src="https://eu.nv.instructuremedia.com/fetch/QkFoYkIxc0hhUU4wd0Fvd2JDc0hnWFV3WlE9PS0tNDBiMzE5NDNlMjBjNzczZTYzOTVkOTg5Y2U5ODU1OGI4YTI3NGVlMA.mp4" title="1920x1080 515 kbps"></video>
-
-
-
-
-
-
+<video width="465" height="261" preload="metadata" src="https://dub.cdn.nv.instructuremedia.com/originals/o-4RBxaWg8ACwJc7B8KudS3LJbjeKKKZuu/transcodings/t-4SiDKKu69Zk6XV7jSpR6HaF1YuCmR8pQ.mp4?&Expires=1697674771&Signature=MqFUmJaLI86FJwGrzbn~PXEQ9gxACYp3WYKuYve1VmI5uPGyO7LH5GJh1~qtQDNjC73t6UBpxj0INPi9Ku~56nZ1yWjeCBBvo2jL8ZMCnhoBr-wFZdqKF4zXLp~k47Ygp9xFjRu3RbQRksNQlpzChDSMECJ9J4lDpmfPqdlFHzOVaTsgzvREd~mz4xLPtFA79UMv41QBZIS6Y5T2X90HL6BR8q7DDTOsnlik~AjN44FW0rjBTQnGONn9pcIvjivuhyzxbYrjPYuHtULTamrVaSXYuPIKPsbRqZPJvM0CL7upvVXIJw9hwWm9wCAubzx5aCjBjSblZ1Mg~QQMSD2aOA__&Key-Pair-Id=APKAJLP4NHW7VFATZNDQ"></video>
 
 
 
