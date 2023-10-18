@@ -82,7 +82,7 @@ Evaluation:
 ## Task A: Pick&Carry&Place with sensing and navigation
 Pick&Carry&Place with visual sensing and [navigation](http://wiki.ros.org/navigation?distro=kinetic):  in this third level, the robot [starts in an unknown pose](https://en.wikipedia.org/wiki/Kidnapped_robot_problem) and must make use of its sensors and a prior map of the room to transport the cube safely among rooms.
 
-
+https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment5/example_videos/task%20A%20example.mp4
 
 Implement a behavior tree that goes through the following main states:
 
