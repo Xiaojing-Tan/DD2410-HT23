@@ -36,6 +36,8 @@ The robot's joints will start moving according to the solution you provide, and 
 
 [![Alt text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY28xeWhjNXNheHV1Y3hzMHc1bDNrYTlpYXV2eWQ3MXYxa3pwYWg1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vrTdvND472hcxpk8CA/giphy.gif)](https://www.youtube.com/watch?v=rsxZDhXIY-Q&t=1s)
 
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
+
 Since there is more than one possible solution for this IK problem, the motion of your robot could look different. The important aspect is that the end-effector is following the desired path.
 
 ## **PART 2: KUKA ROBOT**
