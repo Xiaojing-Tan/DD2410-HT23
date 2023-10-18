@@ -46,6 +46,8 @@ Along with the demos, you will be questioned about basic concepts of the solutio
 In this scenario, TIAGo is expected to pick an Aruco cube from a known pose on top of table 1, navigate towards table 2 behind it and place the object there. The cameras and laser scan cannot be used for this level.
 
 
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/bc658c52-34c7-441a-a616-f9e9eaa04e82
+
 
 Implement a state machine which goes through the following main states:
 
@@ -65,6 +67,8 @@ Evaluation:
 The task is the same as above. However this time the camera sensor in TIAGo's head has to be used to detect the cube. After, compute a grasp, transport the marker and verify that it has been placed on the second table. You will implement this logic in the form of a behavior tree this time.
 
 
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/bb7b4f54-3d27-465b-8a98-6782dd3fd372
+
 
 Implement a behavior tree which goes through the following main states:
 1. Detect cube
@@ -82,7 +86,9 @@ Evaluation:
 ## Task A: Pick&Carry&Place with sensing and navigation
 Pick&Carry&Place with visual sensing and [navigation](http://wiki.ros.org/navigation?distro=kinetic):  in this third level, the robot [starts in an unknown pose](https://en.wikipedia.org/wiki/Kidnapped_robot_problem) and must make use of its sensors and a prior map of the room to transport the cube safely among rooms.
 
-https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment5/example_videos/task%20A%20example.mp4
+
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/d7c4e4a7-7057-4f43-86a0-8b3162b0f7d3
+
 
 Implement a behavior tree that goes through the following main states:
 
