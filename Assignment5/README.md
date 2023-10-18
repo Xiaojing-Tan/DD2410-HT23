@@ -122,24 +122,28 @@ Then run:
 # (or using the file browser)
 cd ~/catkin_ws/src
 unzip ~/Downloads/assignment_5.zip
-
+```
+```
+### if run the project on personal computers
+cd 
+rosdep update
+rosdep install --from-paths catkin_ws --ignore-src --rosdistro=$ROS_DISTRO -y
+cd ~/catkin_ws
+catkin_make -DCATKIN_ENABLE_TESTING=0 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+### else skip this step
+```
+```
 # Add this line at the end of your .bashrc file and source it:
 export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/
 source ~/.bashrc
 
 # Build the project:
 cd ~/catkin_ws
-```
-
-```
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
-```
-
-```
 source devel/setup.bash
 ```
 
-To run the project in personal computers, your own missing system dependencies have to be met. A hint on how to solve this can be found in this [README](https://github.com/ignaciotb/robi_final_project/blob/master/README.md) but the setups will vary for each of your installations and we will not offer support for this (Google is your friend here). As an extra advice, stay away from virtual machines and make sure your laptop can handle this workload.
+To run the project on personal computers, your own missing system dependencies have to be met. A hint on how to solve this can be found in this [README](https://github.com/ignaciotb/robi_final_project/blob/master/README.md) but the setups will vary for each of your installations and we will not offer support for this (Google is your friend here). As an extra advice, stay away from virtual machines and make sure your laptop can handle this workload.
 
 ## Launch the simulation
 
