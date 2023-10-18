@@ -70,14 +70,23 @@ This approach is how you normally work with ROS. We have saved some rosbags, loc
 
 For this you have to open four terminals:
 
-Terminal 1: `roscore`  
+Terminal 1:
+```
+roscore
+```  
 A roscore has to be running for ROS nodes to be able to communicate with each other.  
 It is good practice to start the roscore in a separate terminal, even though a roscore is automatically started when you use roslaunch (note that a roscore is not automatically started when you use rosrun). This is because you might have to restart the launch file that you started with roslaunch, this will cause the roscore to terminate and you have to restart everything.
 
-Terminal 2: `roslaunch mapping_assignment play.launch`  
+Terminal 2:
+```
+roslaunch mapping_assignment play.launch
+```  
 This launches RVIZ for you so that you can see how the robot moves and how the map is being updated by your code.
 
-Terminal 3: `rosbag play --clock BAGFILE`  
+Terminal 3:
+```
+rosbag play --clock BAGFILE
+```  
 Where:
 |**Argument**   |**Purpose**|
 |---            |---        |
@@ -97,10 +106,16 @@ This runs your code.
 ### From text file generated from rosbag
 This approach is only available to facilitate you when you want to compare the map your code generate compared to the maps that we have supplied. We highly recommend to use the other approach for most of the development.
 
-Terminal 1: `roscore`  
+Terminal 1:
+```
+roscore
+```  
 Same as above.
 
-Terminal 2: `rosrun mapping_assignment main.py FILE`  
+Terminal 2:
+```
+rosrun mapping_assignment main.py FILE
+```  
 Where:
 |**Argument**   |**Purpose**|
 |---            |---        |
