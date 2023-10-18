@@ -34,7 +34,7 @@ At the beginning, this function always returns zero values for the joints, so th
 
 The robot's joints will start moving according to the solution you provide, and you should see something like this:
 
-[![Alt text](https://i.ytimg.com/vi/rsxZDhXIY-Q/maxresdefault.jpg)](https://www.youtube.com/watch?v=rsxZDhXIY-Q)
+[![Alt text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY28xeWhjNXNheHV1Y3hzMHc1bDNrYTlpYXV2eWQ3MXYxa3pwYWg1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vrTdvND472hcxpk8CA/giphy.gif)](https://www.youtube.com/watch?v=rsxZDhXIY-Q&t=1s)
 
 Since there is more than one possible solution for this IK problem, the motion of your robot could look different. The important aspect is that the end-effector is following the desired path.
 
@@ -87,7 +87,7 @@ Once you have implemented an IK solution, you can test it by relaunching the *<f
 
 The robot should move down and up along the path, keeping a constant orientation, similarly to this:
 
-![Alt text](https://i.giphy.com/media/6Ydt0evLZYU2MtNwX7/giphy.webp)
+[![Alt text](https://i.giphy.com/media/6Ydt0evLZYU2MtNwX7/giphy.webp)](https://www.youtube.com/watch?v=A-MGo2cvHNs)
 
 ### FAQ:
 
