@@ -115,7 +115,7 @@ Evaluation:
 The following instructions are for the PCs in the lab rooms, which have already been set up for you.
 ```
 # Download the project code:
-# From files, download [assignment_5.zip](https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment5/assignment_5.zip)
+x-www-browser https://github.com/Xiaojing-Tan/DD2410-HT23/raw/main/Assignment5/assignment_5.zip
 
 # Unpack it in ~/catkin_ws/src/
 # (or using the file browser)
