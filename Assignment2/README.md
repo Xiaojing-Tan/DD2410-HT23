@@ -14,7 +14,9 @@ The python file: *<font color=red>kinematics_assignment_metapackage/kinematics_a
 ## **PART 1: SCARA ROBOT**
 To visualize the robot, run:
 
-`roslaunch kinematics_assignment scara_launch.launch`
+```
+roslaunch kinematics_assignment scara_launch.launch
+```
 
 An rviz window will open:
 
@@ -43,7 +45,9 @@ Since there is more than one possible solution for this IK problem, the motion o
 ## **PART 2: KUKA ROBOT**
 To visualize the robot, run:
 
-`roslaunch kinematics_assignment kuka_launch.launch`
+```
+roslaunch kinematics_assignment kuka_launch.launch
+```
 
 An rviz window will open:
 
