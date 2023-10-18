@@ -5,6 +5,8 @@
 This assignment is carried out in pairs, and presented orally to the TA's. You must upload your files here before the oral presentation.  
 Completing this assignment to an E level by Oct. 13, 17:00 will give you 3 bonus points towards the score of the final exam. Completing it to the C level by the same deadline will give you 5 bonus points, and the A level will give you 7 points.
 
+Project package repository: https://github.com/Xiaojing-Tan/DD2410-HT23-Project
+
 ## [Presentation slides](https://github.com/Xiaojing-Tan/DD2410-HT23/blob/main/Assignment5/DD2410%20Assignment%205%20Mobile%20manipulation.pdf)
 
 ## Introduction
