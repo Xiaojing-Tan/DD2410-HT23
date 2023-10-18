@@ -34,9 +34,11 @@ At the beginning, this function always returns zero values for the joints, so th
 
 The robot's joints will start moving according to the solution you provide, and you should see something like this:
 
-[![Alt text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY28xeWhjNXNheHV1Y3hzMHc1bDNrYTlpYXV2eWQ3MXYxa3pwYWg1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vrTdvND472hcxpk8CA/giphy.gif)](https://www.youtube.com/watch?v=rsxZDhXIY-Q&t=1s)
 
-https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/2111ab73-de23-472f-be0c-03a49aff0056
+
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/50302538-d79b-4f34-99da-06945fef1441
+
+
 
 
 Since there is more than one possible solution for this IK problem, the motion of your robot could look different. The important aspect is that the end-effector is following the desired path.
@@ -90,7 +92,8 @@ Once you have implemented an IK solution, you can test it by relaunching the *<f
 
 The robot should move down and up along the path, keeping a constant orientation, similarly to this:
 
-https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/a9055755-6158-4241-93d3-e1f3efc5fc1b  
+https://github.com/Xiaojing-Tan/DD2410-HT23/assets/58906870/a9055755-6158-4241-93d3-e1f3efc5fc1b
+
 (Source: https://www.youtube.com/watch?v=A-MGo2cvHNs)
 
 ### FAQ:
