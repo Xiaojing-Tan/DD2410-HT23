@@ -42,11 +42,85 @@ Along with the demos, you will be questioned about basic concepts of the solutio
 
 In this scenario, TIAGo is expected to pick an Aruco cube from a known pose on top of table 1, navigate towards table 2 behind it and place the object there. The cameras and laser scan cannot be used for this level.
 
-<video width="465" height="261" preload="metadata" src="https://dub.cdn.nv.instructuremedia.com/originals/o-4RBxaWg8ACwJc7B8KudS3LJbjeKKKZuu/transcodings/t-4SiDKKu69Zk6XV7jSpR6HaF1YuCmR8pQ.mp4?&Expires=1697674771&Signature=MqFUmJaLI86FJwGrzbn~PXEQ9gxACYp3WYKuYve1VmI5uPGyO7LH5GJh1~qtQDNjC73t6UBpxj0INPi9Ku~56nZ1yWjeCBBvo2jL8ZMCnhoBr-wFZdqKF4zXLp~k47Ygp9xFjRu3RbQRksNQlpzChDSMECJ9J4lDpmfPqdlFHzOVaTsgzvREd~mz4xLPtFA79UMv41QBZIS6Y5T2X90HL6BR8q7DDTOsnlik~AjN44FW0rjBTQnGONn9pcIvjivuhyzxbYrjPYuHtULTamrVaSXYuPIKPsbRqZPJvM0CL7upvVXIJw9hwWm9wCAubzx5aCjBjSblZ1Mg~QQMSD2aOA__&Key-Pair-Id=APKAJLP4NHW7VFATZNDQ"></video>
+
+
+Implement a state machine which goes through the following main states:
+
+1. Complete picking task
+2. Carry cube to second table
+3. Complete placing task
+
+Obs: use the ROS tools (rostopic, rosmsg, rosservice, rosrun tf view_frames, etc) to explore the system and figure out which module does what. You will realize this is the most time-consuming part of this level. Once you are familiar with the project, implementing the solution will be straight forward.
+
+Evaluation:
+
+1. Show a working simulation and be able to explain your implementation
+2. Be able to reason about this solution, i.e: Can the mission succeed if the cube is displaced before being picked? What if table 2 is moved?
+
+## Task C: Pick&Carry&Place with visual sensing
+
+The task is the same as above. However this time the camera sensor in TIAGo's head has to be used to detect the cube. After, compute a grasp, transport the marker and verify that it has been placed on the second table. You will implement this logic in the form of a behavior tree this time.
 
 
 
+Implement a behavior tree which goes through the following main states:
+1. Detect cube
+2. Complete picking task 
+3. Carry cube to second table
+4. Complete placing task
+5. Cube placed on table?
+    1. Yes: end of task
+    2. No: go back to initial state in front of table 1
 
+Evaluation:
+1. Show a working simulation and be able to explain your implementation
+2. Be able to reason about this solution, i.e: Can the mission succeed if the cube is displaced before being picked? What if table 2 is moved? Would the robot be able to transport several cubes (one at a time) with the given solution?
+
+## Task A: Pick&Carry&Place with sensing and navigation
+Pick&Carry&Place with visual sensing and [navigation](http://wiki.ros.org/navigation?distro=kinetic):  in this third level, the robot [starts in an unknown pose](https://en.wikipedia.org/wiki/Kidnapped_robot_problem) and must make use of its sensors and a prior map of the room to transport the cube safely among rooms.
+
+
+Implement a behavior tree that goes through the following main states:
+
+1. Robot has localized itself in the apartment
+2. Navigation to picking pose
+3. Cube detected
+4. Complete picking task 
+5. Navigation with cube to second table
+6. Complete placing task
+7. Cube placed on table?
+    1. Yes: end of mission
+    2. No: go back to state 2 and repeat until success. For this, you need to respawn the cube to its original pose in case it has fallen.
+
+Obs 1: At any time during the navigation (not after the picking/placing sequences have started), a bad-intentioned TA might kidnap your robot. Your behavior tree must be able to detect this and react to it so that the robot always knows its true position and can avoid collisions. Kidnap the robot yourself during your implementation to test your solution (the simulation can be paused and the robot moved manually, see how [here](http://gazebosim.org/tutorials?tut=guided_b2&cat=)).
+
+Obs 2: The TA might also manually throw away the cube from the robot's gripper during the navigation to see that the robot is able to detect that the placing has failed. As before, you can test this yourselves by dropping the cube through the Gazebo GUI.
+
+Obs 3: The robot uses a particle filter for localization. Use the current state of the distribution of the particles to know when the filter has converged. Other solutions will not be accepted.
+
+Evaluation:
+
+1. Show a working simulation and be able to explain your implementation
+2. Be able to reason about this solution, i.e: Why do we ask you to make the robot spin to help the AMCL? What does the distribution of particles tell us? Why does AMCL fail to converge sometimes? When to use/avoid timers while waiting for a result from an action server.
+
+## Install
+The following instructions are for the PCs in the lab rooms, which have already been set up for you.
+```
+# Download the project code:
+# From files, download [assignment_5.zip]()
+
+# Unpack it in ~/catkin_ws/src/
+# (or using the file browser)
+cd ~/catkin_ws/src
+unzip ~/Downloads/assignment_5.zip
+
+# Add this line at the end of your .bashrc file and source it:
+export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/
+source ~/.bashrc
+
+# Build the project:
+cd ~/catkin_ws
+```
 
 
 
